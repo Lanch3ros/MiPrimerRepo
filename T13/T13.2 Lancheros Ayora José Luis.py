@@ -46,8 +46,8 @@ def leevec_r_msj (v, tv, msj):
         
 def inic_vector_potencias ( ):
     potencias = [0 for p in range (TMAX)]
-    print ("\nLA CONSTRUIRÁ EL ESTUDIANTE")
-    
+    print ("EL ESTUDIANTE LA CONSTRUIRA")
+
 def escvec_msj (v, tv, msj):
     print (msj)
     for pos in range (0, tv):
@@ -67,7 +67,7 @@ def main ( ):
     cn = pide_entero_pos_max_msj (TMAX, "\nCantidad de números")
     leevec_r_msj (reales, cn, "\nNúmeros reales (bases)")
     leevec_e_msj (enteros, cn, "\nNúmeros enteros (potencias)")
-    inic_vector_potencias ( )
+    inic_vector_potencias ()
     resultados (reales, enteros, cn)
     print ("\n\nFin.\n\n")
     
