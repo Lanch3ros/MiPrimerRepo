@@ -27,48 +27,58 @@ IMPORTANTE:
 
 TMAX = 100
 
-def pide_entero_pos_max_msj (maxi, msj):
+def pide_entero_pos_max_msj(maxi, msj):
     num = 0
     while num <= 0 or num > maxi:
-        print (msj, maxi, end = " ")
-        num = int (input ( ))
+        print(msj, maxi, end=" ")
+        num = int(input())
     return num
 
-def leevec_e_msj (v, tv, msj):
-    print (msj)
-    for pos in range (0, tv):
-        v [pos] = int (input ("# "))
+def leevec_e_msj(v, tv, msj):
+    print(msj)
+    for pos in range(tv):
+        v[pos] = int(input("# "))
 
-def leevec_r_msj (v, tv, msj):
-    print (msj)
-    for pos in range (0, tv):
-        v [pos] = float (input ("# "))
-        
-def inic_vector_potencias ( ):
-    potencias = [0 for p in range (TMAX)]
-    print ("EL ESTUDIANTE LA CONSTRUIRA")
+def leevec_r_msj(v, tv, msj):
+    print(msj)
+    for pos in range(tv):
+        v[pos] = float(input("# "))
 
-def escvec_msj (v, tv, msj):
-    print (msj)
-    for pos in range (0, tv):
-        print (v [pos], end = " ")
+def inic_vector_potencias(reales, enteros, potencias, cn):
+    # Eleva cada número real a la potencia del número entero correspondiente
+    for i in range(cn):
+        potencias[i] = reales[i] ** enteros[i]
 
-def resultados (reales, enteros, cn):
-    print ("\nRESULTADOS")
-    escvec_msj (reales, cn, "\nBASES")
-    escvec_msj (enteros, cn, "\n\nEXPONENTES")
+def escvec_msj(v, tv, msj):
+    print(msj)
+    for pos in range(tv):
+        print(v[pos], end=" ")
+    print()  # Para salto de línea después de mostrar el vector
+
+def resultados(reales, enteros, potencias, cn):
+    print("\nRESULTADOS")
+    escvec_msj(reales, cn, "\nBASES:")
+    escvec_msj(enteros, cn, "\nEXPONENTES:")
+    escvec_msj(potencias, cn, "\nRESULTADO DE LAS POTENCIAS:")
+
+def main():
+    reales = [0 for p in range(TMAX)]  # Vector para los números reales
+    enteros = [0 for p in range(TMAX)]  # Vector para los números enteros
+    potencias = [0 for p in range(TMAX)]  # Vector para almacenar los resultados de las potencias
+
+    print("\nIngrese varios números reales y la misma cantidad de números enteros.")
+    print("Elevaré cada número real a cada número entero.")
     
-def main ( ):
-    reales = [0 for p in range (TMAX)]
-    enteros = [0 for p in range (TMAX)]
-    print ("\nIngrese varios números reales y la misma cantidad de números enteros.")
-    print ("Elevaré de cada número real a cada número entero.")
-    print ("el producto de los números pares.")
-    cn = pide_entero_pos_max_msj (TMAX, "\nCantidad de números")
-    leevec_r_msj (reales, cn, "\nNúmeros reales (bases)")
-    leevec_e_msj (enteros, cn, "\nNúmeros enteros (potencias)")
-    inic_vector_potencias ()
-    resultados (reales, enteros, cn)
-    print ("\n\nFin.\n\n")
+    cn = pide_entero_pos_max_msj(TMAX, "\nCantidad de números, maximo")
     
-main ( )
+    leevec_r_msj(reales, cn, "\nNúmeros reales (bases):")
+    leevec_e_msj(enteros, cn, "\nNúmeros enteros (potencias):")
+    
+    # Calcular las potencias
+    inic_vector_potencias(reales, enteros, potencias, cn)
+
+    resultados(reales, enteros, potencias, cn)
+    
+    print("\n\nFin.\n\n")
+
+main()
