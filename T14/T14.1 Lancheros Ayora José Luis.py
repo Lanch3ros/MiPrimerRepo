@@ -38,7 +38,6 @@ def por_imc ( ):
             peso = float (input ("Peso en (kg)= "))
             estatura = float (input ("Estatura en (m)= "))
             imc = peso / (estatura ** 2)
-            verificacion (peso, estatura, imc)
             ct += 1
 
 def resultados (familias, integrantes, cant_f, peso_nor, otro_peso):
@@ -63,10 +62,6 @@ peso, estatura, imc = por_imc ( )
 
 # Verificación del resultado.
 def verificacion ( ):
-
-
-    
-    
-
+``
 # La función resultados le podría servir. Siéntase en libertad de construir otra similar o mejor.
 # Resultados (familias, integrantes, cant_f, peso_nor, otro_peso).
