@@ -2,7 +2,7 @@
 Universidad Escuela Colombiana de Ingeniería
 Profesora: Ingeniera Patricia Salazar Perdomo
 
-Estudiante: Apellidos Nombre
+Estudiante: Lancheros Ayora José Luis
 
 Lenguaje: Python
 Referencia: Tarea No. 14. Programación modular con vectores.
@@ -28,7 +28,6 @@ Referencia: Tarea No. 14. Programación modular con vectores.
 
 Escriba un ejemplo de invocación de la función. Recuerde lo importante que es
 darles nombres significativos a las variables y a las funciones.
-
 """
 
 def escvec (v, tv):

@@ -2,7 +2,7 @@
 Universidad Escuela Colombiana de Ingeniería
 Profesora: Ingeniera Patricia Salazar Perdomo
 
-Estudiante: Apellidos Nombre
+Estudiante: Lancheros Ayora José Luis
 
 Lenguaje: Python
 Referencia: Tarea No. 14. Programación modular con vectores.
@@ -27,7 +27,6 @@ Referencia: Tarea No. 14. Programación modular con vectores.
    [18.5, 24.9]         Peso normal o adecuado
    [25.0, 29.9]         Sobrepeso
    Mayor o igual a 30.0 Obesidad
-
 """
 
 def por_imc ():

@@ -2,7 +2,7 @@
 Universidad Escuela Colombiana de Ingeniería
 Profesora: Ingeniera Patricia Salazar Perdomo
 
-Estudiante: Apellidos Nombre
+Estudiante: Lancheros Ayora José Luis
 
 Lenguaje: Python
 Referencia: Tarea No. 14. Programación modular con vectores.
@@ -32,7 +32,6 @@ Referencia: Tarea No. 14. Programación modular con vectores.
 
    Escriba un ejemplo de invocación. Recuerde la importancia de dar nombres
    significativos a las variables y a las funciones.
-
 """
 
 # Averigua si el parámetro num es primo. Si lo es, retorna 1, y si no lo es, retorna 0.
