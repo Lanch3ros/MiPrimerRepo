@@ -29,9 +29,17 @@ Referencia: Tarea No. 14. Programación modular con vectores.
    Mayor o igual a 30.0 Obesidad
 """
 
-def por_imc ():
-    print ("\nFunción por_imc: La construye el estudiante.")
-
+def por_imc ( ):
+    for i in range (cant_f):
+        print (f"\n\nFamilia {familias[i]}")
+        ct = 1
+        for j in range (integrantes[i]):
+            print (f"\nIntegrante #{ct}")
+            peso = float (input ("Peso en (kg)= "))
+            estatura = float (input ("Estatura en (m)= "))
+            imc = peso / (estatura ** 2)
+            verificacion (peso, estatura, imc)
+            ct += 1
 
 def resultados (familias, integrantes, cant_f, peso_nor, otro_peso):
     print ("\nResultados del cálculo del IMC por familia\n")
@@ -51,8 +59,14 @@ integrantes = [3, 2, 4, 3, 5, 3, 6, 3, 4]
 cant_f = 9
 
 # Ejemplo de invocación.
-por_imc ( )
+peso, estatura, imc = por_imc ( )
 
 # Verificación del resultado.
+def verificacion ( ):
+
+
+    
+    
+
 # La función resultados le podría servir. Siéntase en libertad de construir otra similar o mejor.
-#resultados (familias, integrantes, cant_f, peso_nor, otro_peso)
+# Resultados (familias, integrantes, cant_f, peso_nor, otro_peso).
