@@ -29,7 +29,9 @@ Referencia: Tarea No. 14. Programación modular con vectores.
    Mayor o igual a 30.0 Obesidad
 """
 
-def por_imc ( ):
+def por_imc (familias, integrantes, cant_f):
+    peso_normal = [0 for _ in range(cant_f)]
+    otro_peso = [0 for _ in range(cant_f)]
     for i in range (cant_f):
         print (f"\n\nFamilia {familias[i]}")
         ct = 1
@@ -38,7 +40,13 @@ def por_imc ( ):
             peso = float (input ("Peso en (kg)= "))
             estatura = float (input ("Estatura en (m)= "))
             imc = peso / (estatura ** 2)
+            print(f"IMC del integrante #{ct}: {round(imc, 2)}")
             ct += 1
+            if 18.5 <= imc <= 24.9:
+                peso_normal[i] += 1
+            else:
+                otro_peso[i] += 1
+    return peso_normal, otro_peso
 
 def resultados (familias, integrantes, cant_f, peso_nor, otro_peso):
     print ("\nResultados del cálculo del IMC por familia\n")
@@ -50,18 +58,16 @@ def resultados (familias, integrantes, cant_f, peso_nor, otro_peso):
         print ("\t Otro peso:", otro_peso [f])
         input ("\t\t\tPresione Enter para continuar ")
 
-
-
 # DATOS DE PRUEBA.
 familias = ["López", "Pérez", "Carmona", "Lugo", "Morales", "Durán", "Zapata", "Arnedo", "Ramos"]
 integrantes = [3, 2, 4, 3, 5, 3, 6, 3, 4]
 cant_f = 9
 
 # Ejemplo de invocación.
-peso, estatura, imc = por_imc ( )
+peso_normal, otro_peso = por_imc (familias, integrantes, cant_f)
 
-# Verificación del resultado.
-def verificacion ( ):
-``
-# La función resultados le podría servir. Siéntase en libertad de construir otra similar o mejor.
-# Resultados (familias, integrantes, cant_f, peso_nor, otro_peso).
+# Mostrar resultados
+resultados (familias, integrantes, cant_f, peso_normal, otro_peso)
+
+# Fin del programa
+print("\n\nFin.\n\n")
