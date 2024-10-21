@@ -30,28 +30,49 @@ Escriba un ejemplo de invocación de la función. Recuerde lo importante que es
 darles nombres significativos a las variables y a las funciones.
 """
 
-def escvec (v, tv):
-    for pv in range (tv):
-        print (v[pv], end = " ")
+def vocales_una_vez(palabra, tam_palabra):
+    vocales = ['a', 'e', 'i', 'o', 'u']
+    conteo_vocales = {vocal: 0 for vocal in vocales}
 
-def vocales_una_vez ( ):
-    print ("\nFunción vocales_una_vez: La construye el estudiante.")
+    for i in range(tam_palabra):
+        letra = palabra[i]
+        if letra in conteo_vocales:
+            conteo_vocales[letra] += 1
 
+    for vocal in vocales:
+        if conteo_vocales[vocal] != 1:
+            return False
+    return True
 
+def escvec(v, tv):
+    for pv in range(tv):
+        print(v[pv], end=" ")
+    print()
 
-vocales = ['a', 'e', 'i', 'o', 'u']
-cv = 5
-
-# DATOS DE PRUEBA.
+# Datos de prueba
 palabra1 = ['i', 'm', 'a', 'g', 'i', 'n', 'a', 'b', 'l', 'e']
 cc1 = 10
 palabra2 = ['a', 'b', 'u', 'e', 'l', 'i', 't', 'o']
 cc2 = 8
 
-# Ejemplo de invocación.
-vocales_una_vez ( )
+# Ejemplo de invocación
+resultado1 = vocales_una_vez(palabra1, cc1)
+resultado2 = vocales_una_vez(palabra2, cc2)
 
-# Verificación del resultado.
+# Mostrar los resultados
+print("Verificando palabra1:")
+escvec(palabra1, cc1)
+if resultado1:
+    print("La palabra contiene todas las vocales una sola vez.")
+else:
+    print("La palabra NO contiene todas las vocales una sola vez.")
+print("\nVerificando palabra2:")
+escvec(palabra2, cc2)
+if resultado2:
+    print("La palabra contiene todas las vocales una sola vez.")
+else:
+    print("La palabra NO contiene todas las vocales una sola vez.")
+
 
 
 

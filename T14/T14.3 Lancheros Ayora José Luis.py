@@ -34,41 +34,49 @@ Referencia: Tarea No. 14. Programación modular con vectores.
    significativos a las variables y a las funciones.
 """
 
-# Averigua si el parámetro num es primo. Si lo es, retorna 1, y si no lo es, retorna 0.
-def es_primo (num):
+# Función que determina si un número es primo
+def es_primo(num):
     if num < 2: 
-       return 0
-    for posdiv in range (2, num // 2 + 1):
+        return False
+    for posdiv in range(2, num // 2 + 1):
         if num % posdiv == 0:
-           return 0
-        posdiv = posdiv + 1
-    return 1
+            return False
+    return True
 
-def escvec (v, tv):
-    for pv in range (tv):
-        print (v[pv], end = " ")
-        
-def cuenta_en_vector (v, tv, que):
+def escvec(v, tv):
+    for pv in range(tv):
+        print(v[pv], end=" ")
+    print()
+
+def cuenta_en_vector(v, tv, que):
     cont = 0
-    for pv in range (tv):
-        if v [pv] == que:
-            cont = cont + 1
-    return cont    
+    for pv in range(tv):
+        if v[pv] == que:
+            cont += 1
+    return cont
 
+def en_conj_2_veces_primo(conjunto_1, c_elem_1, conjunto_2, c_elem_2):
+    tercer_vector = []
+    contador_primos = 0
+    for i in range(c_elem_1):
+        numero = conjunto_1[i]
+        cantidad = cuenta_en_vector(conjunto_2, c_elem_2, numero)
+        if es_primo(cantidad):
+            tercer_vector.append(numero)
+            contador_primos += 1
 
-    
-def en_conj_2_veces_primo ( ):
-    print ("\nFunción en_conj_2_veces_primo: La construye el estudiante.")
+    return tercer_vector, contador_primos
 
-
-
-# DATOS DE PRUEBA.
+# DATOS DE PRUEBA
 conjunto_1 = [22, 7, 3, 4, 8, 1, 0, 11, 34, 41, 2, 70, 33, 13, 20]
 c_elem_1 = 15
 conjunto_2 = [66, 7, 11, 11, 13, 3, 5, 7, 0, 11, 13, 7, 13, 13, 4, 13, 5, 0]
 c_elem_2 = 18
 
-# Ejemplo de invocación.
-en_conj_2_veces_primo ( )
+# Ejemplo de invocación
+tercer_vector, contador_primos = en_conj_2_veces_primo(conjunto_1, c_elem_1, conjunto_2, c_elem_2)
 
-# Verificación del resultado.
+# Verificación del resultado
+print("Números del primer vector que aparecen en el segundo una cantidad de veces que es un número primo:")
+escvec(tercer_vector, len(tercer_vector))
+print(f"Cantidad de números que cumplen la condición: {contador_primos}")
