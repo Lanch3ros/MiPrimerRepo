@@ -39,7 +39,7 @@ def escribe_mat (matriz, nf, nc):
       print (matriz[f][c], end = " ")
     print ("\n")
 
-mat = [[34, 99, 33],
+mat = [[34, -99, -33],
         [61, 111, 87],
         [0, 56, 48],
         [3, 6, 31]]
