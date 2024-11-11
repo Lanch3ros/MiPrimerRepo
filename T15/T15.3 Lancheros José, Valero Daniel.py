@@ -9,7 +9,6 @@ Referencia: Tarea No. 15
 
 3.  Averiguar el mayor valor que hay en la diagonal principal de una matriz cuadrada de máximo 30×30
     y en qué posición está. 
-
 '''
 
 MCF = 20 # Máxima cantidad de filas.
