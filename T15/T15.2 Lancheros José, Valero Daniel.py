@@ -2,13 +2,12 @@
 Universidad Escuela Colombiana de Ingeniería
 Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante: Daniel Valero Quiroga
+Estudiante: Lancheros José, Valero Daniel
 Lenguaje: Python
 
 Referencia: Tarea No. 15
 
-4.  Averiguar el mayor valor que hay en la diagonal secundaria de una matriz cuadrada de máximo 30×30 y
-    en qué posición está. 
+2.  Restar el contenido de dos matrices.
 
 '''
 
@@ -35,38 +34,31 @@ def escribe_mat_msj (matriz, fil, col, msj):
             print (matriz [f][c], end = " ")
         print ("\n")
 
-def datos_de_entrada (m1):
+def datos_de_entrada (m1,m2):
       fil = pide_entero_pos_max_msj (MCF, "Cantidad de filas, máximo")
       col = pide_entero_pos_max_msj (MCC, "Cantidad de columnas, máximo")
       leemat_e_msj (m1, fil, col, "\nMATRIZ 1")
+      leemat_e_msj (m2, fil, col, "\nMATRIZ 2")   
       return fil, col
-def mayor_diagonal_secundaria (m1,fil,col):
-      mayor = m1[0][0]
-      pos_fi = 0
-      pos_co = 0
+def resta (m1,m2,fil,col):
+      m3 =[[0 for c in range (col)] for f in range (fil)]
       for f in range (fil):
             for c in range (col):
-                  if f + c == fil-1:
-                        if mayor < m1[f][c]:
-                              mayor = m1[f][c]
-                              pos_fi = f
-                              pos_co = c
-      return mayor,pos_fi,pos_co
-def resultados (m1,fil,col,pos_fi,pos_co,mayor):
+                  m3[f][c]= m1[f][c] - m2[f][c]
+      return m3
+      
+def resultados (m1,m2,m3,fil,col ):
       escribe_mat_msj (m1, fil, col, "Matriz 1")
-      print ("EL número mayor en la diagonal secundaria es:")
-      print (mayor)
-      print ("Y esta en la fila:",pos_fi+1,"y en la columna",pos_co+1,"")
+      escribe_mat_msj (m2, fil, col, "Matriz 2")
+      escribe_mat_msj (m3, fil, col, "Matriz resultante")
     
 def main ( ):
       m1 = [[0 for c in range (MCC)] for f in range (MCF)]
+      m2 = [[0 for c in range (MCC)] for f in range (MCF)]
       print ("\nHola, bienvenido a este programa")
-      fil, col = datos_de_entrada (m1)
-      mayor,pos_fi,pos_co = mayor_diagonal_secundaria (m1,fil,col)
-      resultados (m1,fil,col,pos_fi,pos_co,mayor)
-
-
-
-      print ("\nFINNN\n")
+      fil, col = datos_de_entrada (m1,m2)
+      m3 = resta (m1,m2,fil,col)
+      resultados (m1,m2,m3,fil,col )
+      print ("\nFINN\n")
 
 main ( )

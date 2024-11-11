@@ -2,7 +2,7 @@
 Universidad Escuela Colombiana de Ingeniería
 Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante: Daniel Valero Quiroga
+Estudiante: Lancheros José, Valero Daniel
 Lenguaje: Python
 
 Referencia: Tarea No. 15

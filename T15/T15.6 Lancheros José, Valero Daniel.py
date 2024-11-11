@@ -2,12 +2,12 @@
 Universidad Escuela Colombiana de Ingeniería
 Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante: Daniel Valero Quiroga
+Estudiante: Lancheros José, Valero Daniel
 Lenguaje: Python
 
 Referencia: Tarea No. 15
 
-2.  Restar el contenido de dos matrices.
+6.  Inicializar un vector con la suma de cada columna de una matriz.
 
 '''
 
@@ -33,32 +33,38 @@ def escribe_mat_msj (matriz, fil, col, msj):
         for c in range (col):
             print (matriz [f][c], end = " ")
         print ("\n")
+        
+def escribe_vect_msj (vector, p, msj):
+    print (msj) 
+    for pos in range (p):
+      print (vector [pos], end = " ")
 
-def datos_de_entrada (m1,m2):
+def datos_de_entrada (m1):
       fil = pide_entero_pos_max_msj (MCF, "Cantidad de filas, máximo")
       col = pide_entero_pos_max_msj (MCC, "Cantidad de columnas, máximo")
       leemat_e_msj (m1, fil, col, "\nMATRIZ 1")
-      leemat_e_msj (m2, fil, col, "\nMATRIZ 2")   
       return fil, col
-def resta (m1,m2,fil,col):
-      m3 =[[0 for c in range (col)] for f in range (fil)]
-      for f in range (fil):
-            for c in range (col):
-                  m3[f][c]= m1[f][c] - m2[f][c]
-      return m3
-      
-def resultados (m1,m2,m3,fil,col ):
+def vector_suma (m1, fil,col):
+      vector = [0 for p in range (fil)]
+      for c in range (col):
+            suma = 0
+            for f in range (fil):
+                  suma = suma + m1[f][c]
+            vector[c] = suma
+      return vector
+
+            
+def resultados (m1, fil, col,vector):
       escribe_mat_msj (m1, fil, col, "Matriz 1")
-      escribe_mat_msj (m2, fil, col, "Matriz 2")
-      escribe_mat_msj (m3, fil, col, "Matriz resultante")
+      escribe_vect_msj (vector, col, "EL vector de la suma de las columnas es:")
+
     
 def main ( ):
       m1 = [[0 for c in range (MCC)] for f in range (MCF)]
-      m2 = [[0 for c in range (MCC)] for f in range (MCF)]
-      print ("\nHola, bienvenido a este programa")
-      fil, col = datos_de_entrada (m1,m2)
-      m3 = resta (m1,m2,fil,col)
-      resultados (m1,m2,m3,fil,col )
-      print ("\nFINN\n")
+      print ("\nHola")
+      fil, col = datos_de_entrada (m1)
+      vector = vector_suma (m1, fil,col)
+      resultados (m1, fil, col,vector)
+      print ("\nFINN.\n")
 
 main ( )
