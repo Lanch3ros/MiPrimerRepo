@@ -2,7 +2,7 @@
 Universidad Escuela Colombiana de Ingeniería
 Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante: Nombre(s) Apellidos, Nombre(s) Apellidos
+Estudiante: Lancheros José, Valero Daniel
 Lenguaje: Python
 
 Referencia: Tarea No. 15
@@ -58,7 +58,6 @@ def main ( ):
       leemat_e_msj (m2, filas, columnas, "Matriz 2")
       mat3 = a_pot_b (filas, columnas, m1, m2)
       resultados (m1, m2, mat3, filas, columnas)
-
       print ("\nFin del programa.\n")
 
 main ( )
