@@ -3,7 +3,7 @@ Universidad Escuela Colombiana de Ingeniería
 
 Asignatura: 	 Algoritmos y Programación, Grupo 64 (AYPR-64)
 Profesora: 	 Ingeniera Patricia Salazar Perdomo
-Estudiante:      Nombre Apellidos
+Estudiante:      Lancheros Ayora José Luis
 Ref.: 		 Tarea No. 16
 
 A la Asociación de Universidades de Bogotá (AUB) le llega cada semestre el dato de
@@ -41,30 +41,65 @@ def muestra_datos (est_uxs, cu, cs, nom_u, nom_s):
     input ("\n\n\t\tPresione cualquier tecla para continuar ")
 
 # 2. Cuántos estudiantes nuevos entraron a programas de ingeniería en los últimos tres años.
-def total_nuevos ( ):
-    print ("\nTOTAL NUEVOS TODAS LAS UNIVERSIDADES")
-    input ("\n\t\tPresione cualquier tecla para continuar ")
+def total_nuevos (est_uxs, cu, cs):
+    total = 0
+    for u in range(cu):
+        for s in range(cs):
+            total += est_uxs[u][s]
+    print(f"\nTOTAL NUEVOS TODAS LAS UNIVERSIDADES: {total}")
+    input("\n\t\tPresione cualquier tecla para continuar ")
 
 # 3. Cantidad total de estudiantes nuevos por universidad.
-def total_nuevosxu ( ):
-    print ("\nTOTAL NUEVOS POR UNIVERSIDAD")
-    input ("\n\t\tPresione cualquier tecla para continuar ")
+def total_nuevosxu (est_uxs, cu, cs, nom_u):
+    print("\nTOTAL NUEVOS POR UNIVERSIDAD")
+    for u in range(cu):
+        total_u = 0
+        for s in range(cs):
+            total_u += est_uxs[u][s]
+        print(f"{nom_u[u]}: {total_u}")
+    input("\n\t\tPresione cualquier tecla para continuar ")
 
 # 4. En los últimos tres años, qué universidad ha recibido
 #    más estudiantes en un semestre y cuándo ocurrió.
-def u_masnuevos ( ):
-    print ("\nUNIVERSIDAD CON MAS NUEVOS EN UN SEMESTRE")
-    input ("\n\t\tPresione cualquier tecla para continuar ")
+def u_masnuevos (est_uxs, cu, cs, nom_u, nom_s):
+    max_nuevos = 0
+    uni_max = ""
+    sem_max = ""
+    for u in range(cu):
+        for s in range(cs):
+            if est_uxs[u][s] > max_nuevos:
+                max_nuevos = est_uxs[u][s]
+                uni_max = nom_u[u]
+                sem_max = nom_s[s]
+    print(f"\nUNIVERSIDAD CON MÁS NUEVOS: {uni_max} en el semestre {sem_max} con {max_nuevos} estudiantes.")
+    input("\n\t\tPresione cualquier tecla para continuar ")
 
 # 5. En cuál semestre ingresaron más estudiantes en total y cuántos fueron.
-def sem_masnuevos ( ):
-    print ("\nSEMESTRE CON MAS NUEVOS")
-    input ("\n\t\tPresione cualquier tecla para continuar ")
+def sem_masnuevos (est_uxs, cu, cs, nom_s):
+    max_total = 0
+    sem_max = ""
+    for s in range(cs):
+        total_s = 0
+        for u in range(cu):
+            total_s += est_uxs[u][s]
+        if total_s > max_total:
+            max_total = total_s
+            sem_max = nom_s[s]
+    print(f"\nSEMESTRE CON MÁS NUEVOS: {sem_max} con {max_total} estudiantes.")
+    input("\n\t\tPresione cualquier tecla para continuar ")
 
 # 6. En cuáles universidades la admisión ha ido siempre en ascenso.
-def nuevos_ascenso ( ):
-    print ("\nUNIVERSIDADES CON NUEVOS SIEMPRE EN ASCENSO")
-    input ("\n\t\tPresione cualquier tecla para continuar ")
+def nuevos_ascenso (est_uxs, cu, cs, nom_u):
+    print("\nUNIVERSIDADES CON NUEVOS SIEMPRE EN ASCENSO")
+    for u in range(cu):
+        ascenso = True
+        for s in range(1, cs):
+            if est_uxs[u][s] <= est_uxs[u][s-1]:
+                ascenso = False
+                break
+        if ascenso:
+            print(nom_u[u])
+    input("\n\t\tPresione cualquier tecla para continuar ")
     
 def main( ):
     # est_uxs es una matriz de MU filas por MS columnas.
@@ -95,15 +130,15 @@ def main( ):
         if opc == 1:
             muestra_datos (est_uxs, cu, cs, nom_u, nom_s)
         elif opc == 2:
-            total_nuevos ( )
+            total_nuevos(est_uxs, cu, cs)
         elif opc == 3:
-            total_nuevosxu ( )
+            total_nuevosxu(est_uxs, cu, cs, nom_u)
         elif opc == 4:
-            u_masnuevos ( )
+            u_masnuevos(est_uxs, cu, cs, nom_u, nom_s)
         elif opc == 5:
-            sem_masnuevos ( )
+            sem_masnuevos(est_uxs, cu, cs, nom_s)
         elif opc == 6:
-            nuevos_ascenso ( )
+            nuevos_ascenso(est_uxs, cu, cs, nom_u)
         elif opc == 7:
             print ("\n\nFin.\n\n")
 
