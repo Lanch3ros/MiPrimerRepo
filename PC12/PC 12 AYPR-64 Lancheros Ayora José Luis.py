@@ -4,7 +4,7 @@ Asignatura: Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
 Lenguaje: Python
 
-Estudiante: Nombre (s) Apellidos
+Estudiante: Lancheros Ayora Jose Luis
 
 Ref.: Prueba corta 12
 
@@ -59,4 +59,29 @@ nom_u = ["Los Cerezos", "Los Olivos", "Los Pinos", "Los Eucaliptos", "Los Abedul
 nom_s = ["20-1","20-2","21-1","21-2","22-1","22-2"]
 
 cu = 5 # Cantidad de universidades.
-cs = 6 # Cantidad de semestres.
+cs = 6 # Cantidad de semestres. 
+
+def inicializa_min_max(est_uxs, cu, cs, min_por_u, max_por_u):
+    for u in range(cu):
+        min_est = est_uxs[u][0]
+        max_est = est_uxs[u][0]
+        for s in range(1, cs):
+            if est_uxs[u][s] < min_est:
+                min_est = est_uxs[u][s]
+            if est_uxs[u][s] > max_est:
+                max_est = est_uxs[u][s]
+        min_por_u[u] = min_est
+        max_por_u[u] = max_est
+
+min_por_u = [0] * cu
+max_por_u = [0] * cu
+
+inicializa_min_max(est_uxs, cu, cs, min_por_u, max_por_u)
+
+print("Mínimos por universidad:")
+for u in range(cu):
+    print(f"{nom_u[u]}: {min_por_u[u]}")
+
+print("\nMáximos por universidad:")
+for u in range(cu):
+    print(f"{nom_u[u]}: {max_por_u[u]}")
