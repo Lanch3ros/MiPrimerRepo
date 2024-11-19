@@ -3,7 +3,7 @@ UNIVERSIDAD ESCUELA COLOMBIANA DE INGENIERÍA
 
 Asignatura: Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante (s): Apellidos, nombres
+Estudiante (s): Lancheros José Luis
 Ref.: Ejercicios No. 8. Funciones en Python con listas.
 
 • Construir una función en Python que solucione el problema. 
@@ -41,14 +41,25 @@ el momento, entre otros, el recorrido por contenido.
 '''
 
 # Definición de la función.
+def filtra_sexo_y_sangre(datos_est, sexo, tipo_sangre):
+   filtrados = []
+   for dato in datos_est:
+     if dato[2] == sexo and dato[1] == tipo_sangre:
+       filtrados.append(dato)
+   return filtrados
 
+# Ejemplo de datos.
+datos_est = [
+    ["3567", "A+", 'm'], ["1122", "A+", 'f'], ["4432", "O+", 'f'], ["8734", "O-", 'm'],
+    ["1290", "B+", 'f'], ["6512", "A+", 'm'], ["6523", "A-", 'm'], ["9008", "B-", 'm'],
+    ["8745", "A+", 'f'], ["3131", "A-", 'm'], ["8811", "A+", 'f']
+]
 
-# Ejemplo de datos de prueba.
-datos_est = [["3567", "A+", 'm'],  ["1122", "A+", 'f'], ["4432", "O+", 'f'], ["8734", "O-", 'm'],  ["1290", "B+", 'f'], ["6512", "A+", 'm'], ["6523", "A-", 'm'], ["9008", "B-", 'm'], ["8745", "A+", 'f'],  ["3131", "A-", 'm'], ["8811", "A+", 'f']]
-
-
-# Invocación.
-
+# Invocación del filtro.
+sexo = input ("Sexo(f o m): ")
+sangre = input ("Tipo de sangre: ")
+resultado = filtra_sexo_y_sangre(datos_est, sexo, sangre)
 
 # Verificación del resultado.
-
+print (f"\nEstudiantes filtrados por sexo = {sexo} y tipo sangre = {sangre}:\n")
+print(resultado)

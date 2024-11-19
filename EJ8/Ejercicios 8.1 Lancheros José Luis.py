@@ -3,7 +3,7 @@ UNIVERSIDAD ESCUELA COLOMBIANA DE INGENIERÍA
 
 Asignatura: Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante (s): Apellidos, nombres
+Estudiante (s): Lancheros José Luis
 Ref.: Ejercicios No. 8. Funciones en Python con listas.
 
 • Construir una función en Python que solucione el problema. 
@@ -30,13 +30,23 @@ pueden ser los del ejemplo u otros con la misma estructura.
 '''
 
 # Definición de la función.
+def inicializa_dos_listas (utiles):
+   articulo = []
+   precio = [] 
+   for art_y_precio in utiles_esc:
+      articulo.append(art_y_precio[0])
+      precio.append(art_y_precio[1])
+   return articulo, precio
 
-
-# Ejemplo de datos de prueba.
+# Ejemplo de datos de prueba. 
 utiles_esc = [["lápiz", 1500], ["cuaderno", 12200], ["esfero", 3700], ["borrador", 1000], ["regla", 5400], ["tajalápiz", 2700], ["block de papel periódico", 7500], ["colores", 42000], ["corrector", 6800], ["cartulina", 2100], ["escuadra", 4800]]
 
 
 # Invocación.
-
+lista1, lista2 = inicializa_dos_listas (utiles_esc)
 
 # Verificación del resultado.
+print ("Articulos")
+print (lista1)
+print ("\nPrecios")
+print (lista2)

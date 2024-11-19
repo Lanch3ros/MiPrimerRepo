@@ -3,7 +3,7 @@ UNIVERSIDAD ESCUELA COLOMBIANA DE INGENIERÍA
 
 Asignatura: Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante (s): Apellidos, nombres
+Estudiante (s): Lancheros José Luis
 Ref.: Ejercicios No. 8. Funciones en Python con listas.
 
 • Construir una función en Python que solucione el problema. 

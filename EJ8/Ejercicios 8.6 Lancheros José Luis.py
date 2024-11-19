@@ -4,7 +4,7 @@ Asignatura: Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
 Lenguaje: Python
 
-Estudiante: Nombre (s) Apellidos
+Estudiante: Lancheros José Luis
 
 Ref.: Ejercicios No. 8 - Programa modular con listas
 
