@@ -55,13 +55,10 @@ el momento, entre otros, el recorrido por contenido.
 # Definición de la función
 def agrega_productos_a_proveedores(datos_prod, datos_provee):
     for proveedor in datos_provee:
-        codigo_proveedor = proveedor[0]
         productos = []
         for producto in datos_prod:
-            codigo_producto = producto[2][0]
-            nombre_producto = producto[1]
-            if codigo_producto == codigo_proveedor:
-                productos.append(nombre_producto)
+            if producto[2][0] == proveedor[0]:
+                productos.append(producto[1])
         proveedor.append(productos)
 
 # Ejemplo de datos
@@ -95,4 +92,5 @@ agrega_productos_a_proveedores(datos_prod, datos_provee)
 # Verificación del resultado
 print("\nLista de proveedores con productos:\n")
 for proveedor in datos_provee:
+    print ()
     print(proveedor)

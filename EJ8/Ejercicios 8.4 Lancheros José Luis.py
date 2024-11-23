@@ -43,7 +43,14 @@ el momento, entre otros, el recorrido por contenido.
 '''
 
 # Definición de la función.
-
+def estudiante_y_definitiva_int (estudiantes, li, ls):
+   definitiva_est = []
+   for dato in estudiantes:
+      nombre = dato[0]
+      nota_final = (dato[1][0]*0.3 + dato[1][1]*0.3 + dato[1][2]*0.4)
+      if li <= nota_final <= ls:
+         definitiva_est.append([nombre, nota_final])
+   return definitiva_est
 
 # Ejemplo de datos de prueba.
 estudiantes = [["María Pérez", [4.3, 5.0, 4.5]],
@@ -57,6 +64,11 @@ estudiantes = [["María Pérez", [4.3, 5.0, 4.5]],
 
 
 # Invocación.
-
+print ("\nIngrese el intervalo")
+li = float(input("Limite inferior: "))
+ls = float(input("Limite superior: "))
+resultado = estudiante_y_definitiva_int (estudiantes, li, ls)
 
 # Verificación del resultado.
+print (f"\nLista de estudiantes con definitiva entre {li} y {ls}.\n")
+print (resultado)

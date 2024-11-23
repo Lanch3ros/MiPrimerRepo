@@ -26,8 +26,31 @@ Ref.: Ejercicios No. 8 - Programa modular con listas
    Cada uno de los puntos se debe desarrollar en una función.
 
    Sugerencia: Reutilice todo lo que sea posible y que hayamos trabajado en el curso.
-  
 '''
+
+def datos_jug (jugadores):
+    lista = []
+    for jugador in range(jugadores):
+        print (f"\nJugador #{jugador + 1}")
+        nombre = str(input("Nombre: "))
+        apellido = str(input("Apellido: "))
+        estatura = float(input("Estatura(m): "))
+        peso = float(input("Peso(kg): "))
+        lista.append([apellido, nombre,[estatura, peso]])
+    return lista
+
+def calculo_imc (lista):
+    for jugador in lista:
+        imc = jugador[2][1] / jugador[2][0]**2
+        jugador[2].append(imc)
+
+def resultado (lista):
+    for jugador in lista:
+        ct = 1
+        print (f"\nJugador #{ct}")
+        print (f"{jugador[1]} {jugador[0]} mide {jugador[2][0]}m y pesa {jugador[2][1]}kg.")
+        print (f"IMC = {round(jugador[2][2], 2)}")
+        ct += 1
 
 def pide_ent_pos_msj (msj):
     n = -1	
@@ -37,8 +60,11 @@ def pide_ent_pos_msj (msj):
     return n
 
 def main ( ):
-    print ("Mensaje principal")
-
-    print ("Mensaje de finalización")
+    print ("Bienvenido al programa de Jugadores de futbol, pedire la cantidad de jugadores, apellido, nombre, estatura y peso.")
+    jugadores = pide_ent_pos_msj ("\nCantidad de jugadores")
+    lista = datos_jug (jugadores)
+    calculo_imc (lista)
+    resultado (lista)
+    print ("\nFin del programa")
 
 main ( )

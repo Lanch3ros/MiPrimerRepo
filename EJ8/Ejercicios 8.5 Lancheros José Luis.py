@@ -72,8 +72,13 @@ el momento, entre otros, el recorrido por contenido.
 '''
 
 # Definición de la función.
-
-
+def añade_precio (datos_prod, cod_prod_precio):
+    for prod in datos_prod:
+        for precio in cod_prod_precio:
+            if prod[0] == precio[0]:
+               prod[2].append(precio[1])
+    return datos_prod
+        
 # Ejemplo de datos de prueba.
 datos_prod = [["1234", "lenteja", ["Agricultores Unidos", 30]],
               ["9831", "queso", ["Agricultores Unidos", 10]],
@@ -104,6 +109,8 @@ cod_prod_precio = [["9831", 12000],
                    ["3388", 3000]]
 
 # Invocación.
-
+resultado = añade_precio (datos_prod, cod_prod_precio)
 
 # Verificación del resultado.
+print ("Lista con el precio de cada prodcuto\n")
+print (resultado)
