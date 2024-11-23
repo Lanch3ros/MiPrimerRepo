@@ -41,10 +41,10 @@ el momento, entre otros, el recorrido por contenido.
 '''
 
 # Definición de la función.
-def filtra_sexo_y_sangre(datos_est, sexo, tipo_sangre):
+def filtra_sexo_y_sangre(datos_est, sexo, sangre):
    filtrados = []
    for dato in datos_est:
-     if dato[2] == sexo and dato[1] == tipo_sangre:
+     if dato[2] == sexo and dato[1] == sangre:
        filtrados.append(dato)
    return filtrados
 
