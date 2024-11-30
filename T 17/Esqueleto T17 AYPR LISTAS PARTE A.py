@@ -43,7 +43,6 @@ Favor consultarme en caso de duda.
 
 CM = 12  # Cantidad de meses de un año.
 
-# Función para solicitar un entero positivo.
 def pide_ent_pos_msj(que):
     n = -1
     while n < 1:
@@ -85,12 +84,10 @@ def resultados(lista_cumplexmes, meses):
         nombres = " ".join(lista_cumplexmes[i])
         print(f"{meses[i]}. {cantidad}: {nombres}")
 
-# Función principal.
 def main():
     personas = []
     lista_cumplexmes = []
-    meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
-             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
     print("\n\tC U M P L E A Ñ O S   P O R   M E S")
     n = pide_ent_pos_msj("\n\n\tCantidad de personas")
     entrada_datos(n, personas)
