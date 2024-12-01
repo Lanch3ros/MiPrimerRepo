@@ -2,7 +2,7 @@
 Universidad Escuela Colombiana de Ingeniería
 Asignatura: Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante: Apellidos Nombre(s)
+Estudiante: Lancheros Jose, Valero Daniel
 Ref.: Tarea No. 17. Listas.
 
 B. Suponga que se tiene una lista en la que cada registro tiene la siguiente
@@ -45,6 +45,17 @@ datos_export = 	[["9001274376", 1435, 2019, ["Chile", "México", "Ecuador", "Arg
                  ["8999990024", 867, 2019, ["Estados Unidos", "Canadá", "México"]],
                  ["9001274376", 1742, 2017, ["Chile", "México", "Ecuador", "Bolivia", "Brasil", "República Dominicana"]]]
             
-                       
-                       
+def busca_empresa_mayor_exp(datos_export):
+    empresa_mayor = []
+    max_paises = 0
+    for dato in datos_export:
+        cantidad_paises = len(dato[3])
+        if cantidad_paises > max_paises:
+            max_paises = cantidad_paises
+            empresa_mayor = [dato[0], dato[2], dato[1], cantidad_paises]
     
+    return empresa_mayor
+
+empresa = busca_empresa_mayor_exp (datos_export)
+
+print (empresa)

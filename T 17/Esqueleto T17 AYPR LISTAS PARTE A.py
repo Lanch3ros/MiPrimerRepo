@@ -2,7 +2,7 @@
 Universidad Escuela Colombiana de Ingeniería
 Asignatura: Algoritmos y Programación (AYPR)
 Profesora: Ingeniera Patricia Salazar Perdomo
-Estudiante: Apellidos Nombre(s)
+Estudiante: Lancheros Jose, Valero Daniel
 Ref.: Tarea No. 17. Listas.
 
 A. Complete este programa modular que le doy en Python para que haga lo
